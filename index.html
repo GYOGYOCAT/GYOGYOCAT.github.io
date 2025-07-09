@@ -16,6 +16,15 @@
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="your-verification-code">
     
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFRGN7YJYB6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JFRGN7YJYB6');
+    </script>
+    
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1106158066306697"
          crossorigin="anonymous"></script>
@@ -104,17 +113,19 @@
             display: flex;
             background: #f8f9fa;
             border-bottom: 1px solid #e9ecef;
+            flex-wrap: wrap;
         }
 
         .nav-item {
             flex: 1;
-            padding: 15px 20px;
+            padding: 15px 10px;
             text-align: center;
             background: none;
             border: none;
             cursor: pointer;
             font-size: 14px;
             transition: all 0.3s ease;
+            min-width: 80px;
         }
 
         .nav-item:hover {
@@ -179,6 +190,88 @@
             background: #3498db;
         }
 
+        /* 他のアプリリンク用スタイル */
+        .apps-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .app-link {
+            display: block;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .app-link:hover {
+            background: #e9ecef;
+            border-color: #007bff;
+            transform: translateY(-2px);
+        }
+
+        .app-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .app-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .app-desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* フッター情報用スタイル */
+        .site-info {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .info-card h4 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            line-height: 1.6;
+            color: #333;
+        }
+
         @media (max-width: 768px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -192,6 +285,15 @@
             .header h1 {
                 font-size: 2em;
             }
+
+            .nav-item {
+                font-size: 12px;
+                padding: 12px 8px;
+            }
+
+            .apps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -202,7 +304,7 @@
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-1106158066306697"
-             data-ad-slot="1234567890"
+             data-ad-slot="5287863920"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
     </div>
@@ -221,6 +323,7 @@
                     <button class="nav-item" data-page="cards">カード管理</button>
                     <button class="nav-item" data-page="stats">統計</button>
                     <button class="nav-item" data-page="settings">設定</button>
+                    <button class="nav-item" data-page="apps">他のアプリ</button>
                 </nav>
 
                 <div id="home-page" class="page active">
@@ -230,7 +333,7 @@
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-1106158066306697"
-                             data-ad-slot="2345678901"
+                             data-ad-slot="3889638884"
                              data-ad-format="auto"></ins>
                     </div>
                     <p>学習を開始するには、上のメニューから「学習」を選択してください。</p>
@@ -245,7 +348,7 @@
                         <ins class="adsbygoogle"
                              style="display:block"
                              data-ad-client="ca-pub-1106158066306697"
-                             data-ad-slot="4567890123"
+                             data-ad-slot="3889638884"
                              data-ad-format="auto"></ins>
                     </div>
                 </div>
@@ -264,6 +367,37 @@
                     <h2>設定</h2>
                     <p>アプリの設定を変更できます。</p>
                 </div>
+
+                <div id="apps-page" class="page">
+                    <h2>🐱 GYOGYOCAT アプリ群</h2>
+                    <p>他にも便利なWebアプリケーションを提供しています。</p>
+                    
+                    <div class="apps-grid">
+                        <a href="/cook-suggest/" class="app-link">
+                            <span class="app-icon">🍳</span>
+                            <div class="app-name">CookSuggest</div>
+                            <div class="app-desc">材料から料理を提案</div>
+                        </a>
+                        
+                        <a href="/earthquake-monitor/" class="app-link">
+                            <span class="app-icon">🌏</span>
+                            <div class="app-name">地震モニター</div>
+                            <div class="app-desc">リアルタイム地震情報</div>
+                        </a>
+                        
+                        <a href="/x-buzz-simulator/" class="app-link">
+                            <span class="app-icon">🚀</span>
+                            <div class="app-name">X Buzz Simulator</div>
+                            <div class="app-desc">バズ体験シミュレーター</div>
+                        </a>
+                        
+                        <a href="/fireplace-app/" class="app-link">
+                            <span class="app-icon">🔥</span>
+                            <div class="app-name">バーチャル暖炉</div>
+                            <div class="app-desc">リラックス空間演出</div>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <aside class="sidebar desktop-only">
@@ -276,6 +410,63 @@
                 </div>
             </aside>
         </div>
+
+        <!-- 他のアプリ紹介セクション -->
+        <div class="apps-section">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #333;">🐱 GYOGYOCAT 提供アプリ</h3>
+            <div class="apps-grid">
+                <a href="/cook-suggest/" class="app-link">
+                    <span class="app-icon">🍳</span>
+                    <div class="app-name">CookSuggest</div>
+                    <div class="app-desc">1000+レシピから材料に合わせて料理を提案</div>
+                </a>
+                
+                <a href="/earthquake-monitor/" class="app-link">
+                    <span class="app-icon">🌏</span>
+                    <div class="app-name">地震モニター</div>
+                    <div class="app-desc">日本の地震情報をリアルタイムで表示</div>
+                </a>
+                
+                <a href="/x-buzz-simulator/" class="app-link">
+                    <span class="app-icon">🚀</span>
+                    <div class="app-name">X Buzz Simulator</div>
+                    <div class="app-desc">X（Twitter）でバズる体験をシミュレート</div>
+                </a>
+                
+                <a href="/fireplace-app/" class="app-link">
+                    <span class="app-icon">🔥</span>
+                    <div class="app-name">バーチャル暖炉</div>
+                    <div class="app-desc">リアルな暖炉でリラックス空間を演出</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- サイト情報セクション -->
+        <div class="site-info">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #333;">📋 サイト情報</h3>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🎯 開発コンセプト</h4>
+                    <p>日常生活で「あったらいいな」と思うツールを、シンプルで使いやすいWebアプリケーションとして提供しています。無料で、どなたでもご利用いただけます。</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>🛡️ プライバシーポリシー</h4>
+                    <p>当サイトでは、Google AdSenseによる広告配信とGoogle Analyticsによるアクセス解析を使用しています。これらのサービスではCookieを使用する場合があります。詳細は各サービスのプライバシーポリシーをご確認ください。個人情報の収集は行っておりません。</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>📧 お問い合わせ</h4>
+                    <p>アプリに関するご質問、ご要望、不具合報告等がございましたら、GitHubのIssues機能をご利用ください。改善要望やバグ報告をお待ちしております。</p>
+                </div>
+                
+                <div class="info-card">
+                    <h4>⚖️ 利用規約</h4>
+                    <p>当サイトのアプリケーションは個人・商用問わず無料でご利用いただけます。ただし、サービスの可用性を保証するものではありません。利用により生じた損害について当方は責任を負いかねます。</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer Ad -->
@@ -284,10 +475,15 @@
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-1106158066306697"
-             data-ad-slot="1234567890"
+             data-ad-slot="6171337236"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
     </div>
+
+    <footer style="text-align: center; color: white; padding: 20px; margin-top: 30px;">
+        <p>&copy; 2025 GYOGYOCAT. All rights reserved.</p>
+        <p style="opacity: 0.8; font-size: 0.9em;">便利なWebアプリケーションで、あなたの日常をもっと豊かに。</p>
+    </footer>
 
     <script>
         // Page navigation
@@ -309,6 +505,16 @@
         (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-1106158066306697",
             enable_page_level_ads: true
+        });
+
+        // 広告初期化
+        window.addEventListener('load', function() {
+            const ads = document.querySelectorAll('.adsbygoogle');
+            ads.forEach(ad => {
+                if (!ad.dataset.adsbygoogleStatus) {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                }
+            });
         });
     </script>
 </body>
